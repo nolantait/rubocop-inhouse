@@ -10,7 +10,7 @@ Gem::Specification.new do |spec|
 
   spec.summary = "Rubocop configuration for InHouse projects"
   spec.description = spec.summary
-  spec.homepage = "https://inhouse.work/open-source/rubocop-inhouse"
+  spec.homepage = "https://github.com/nolantait/rubocop-inhouse"
   spec.license = "MIT"
   spec.required_ruby_version = ">= 3.2.0"
 
