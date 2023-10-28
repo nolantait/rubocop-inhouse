@@ -9,7 +9,7 @@ Gem::Specification.new do |spec|
   spec.email = ["nolanjtait@gmail.com"]
 
   spec.summary = "Rubocop configuration for InHouse projects"
-  spec.description = spec.summary
+  spec.description = "This is the rubocop configuration we use at inhouse.work for all our projects"
   spec.homepage = "https://github.com/nolantait/rubocop-inhouse"
   spec.license = "MIT"
   spec.required_ruby_version = ">= 3.2.0"
