@@ -3,78 +3,97 @@ RSpec/SpecFilePathFormat:
   Exclude:
     - "**/spec/factories/*"
     - "**/spec/components/**/*"
+
 RSpec/MissingExampleGroupArgument:
   Enabled: true
   Exclude:
     - '**/spec/factories/*'
+
 RSpec/EmptyExampleGroup:
   Enabled: true
   Exclude:
     - '**/spec/factories/*'
+
 RSpec/AnyInstance:
   Enabled: false
   Exclude:
     - '**/spec/factories/*'
+
 RSpec/BeforeAfterAll:
   Enabled: false
   Exclude:
     - '**/spec/factories/*'
+
 RSpec/ContextWording:
   Enabled: false
   Exclude:
     - '**/spec/factories/*'
+
 RSpec/DescribeClass:
   Enabled: false
   Exclude:
     - '**/spec/factories/*'
+
 RSpec/ExampleLength:
   Enabled: false
   Exclude:
     - '**/spec/factories/*'
+
 RSpec/ExpectInHook:
   Enabled: false
   Exclude:
     - '**/spec/factories/*'
+
 RSpec/FilePath:
   Enabled: false
   Exclude:
     - '**/spec/factories/*'
+
 RSpec/InstanceVariable:
   Enabled: false
   Exclude:
     - '**/spec/factories/*'
+
 RSpec/LetSetup:
   Enabled: false
   Exclude:
     - '**/spec/factories/*'
+
 RSpec/MessageChain:
   Enabled: false
   Exclude:
     - '**/spec/factories/*'
+
 RSpec/MessageSpies:
   Enabled: false
   Exclude:
     - '**/spec/factories/*'
+
 RSpec/MultipleExpectations:
   Enabled: false
   Exclude:
     - '**/spec/factories/*'
+
 RSpec/NamedSubject:
   Enabled: false
   Exclude:
     - '**/spec/factories/*'
+
 RSpec/NestedGroups:
   Max: 7
   Exclude:
     - '**/spec/factories/*'
+
 RSpec/SubjectStub:
   Enabled: false
   Exclude:
     - '**/spec/factories/*'
+
 RSpec/VerifiedDoubles:
   Enabled: false
   Exclude:
     - '**/spec/factories/*'
+
 RSpec/VoidExpect:
   Enabled: false
   Exclude:

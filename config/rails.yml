@@ -1,44 +1,108 @@
-Rails/CreateTableWithTimestamps:
+require:
+  - rubocop-inhouse
+  - rubocop-rails
+  - rubocop-capybara
+
+inherit_from:
+  - .capybara.yml
+
+Layout/BlockAlignment:
+  Exclude:
+    - "**/*.erb"
+
+Layout/IndentationWidth:
+  Exclude:
+    - "**/*.erb"
+
+Layout/InitialIndentation:
+  Exclude:
+    - "**/*.erb"
+
+Layout/SpaceInsideParens:
+  Exclude:
+    - "**/*.erb"
+
+Layout/TrailingEmptyLines:
+  Exclude:
+    - "**/*.erb"
+
+Layout/TrailingWhitespace:
+  Exclude:
+    - "**/*.erb"
+
+FactoryBot/AssociationStyle:
+  Enabled: true
+  EnforcedStyle: explicit
+
+Rails/ActionControllerTestCase:
   Enabled: false
+
+Rails/ActionFilter:
+  Enabled: true
+
 Rails/ActiveRecordCallbacksOrder:
   Enabled: true
+
 Rails/AfterCommitOverride:
   Enabled: true
+
+Rails/CreateTableWithTimestamps:
+  Enabled: false
+
+Rails/Date:
+  Enabled: true
+  EnforcedStyle: strict
+
+Rails/Delegate:
+  Enabled: true
+
 Rails/DefaultScope:
   Enabled: true
+
 Rails/FindById:
   Enabled: true
+
 Rails/Inquiry:
   Enabled: true
+
 Rails/MailerName:
   Enabled: true
+
 Rails/MatchRoute:
   Enabled: true
+
 Rails/NegateInclude:
   Enabled: true
+
 Rails/OrderById:
   Enabled: true
+
 Rails/Pluck:
   Enabled: true
+
 Rails/PluckId:
   Enabled: true
+
 Rails/PluckInWhere:
   Enabled: true
+
 Rails/RenderInline:
   Enabled: true
+
 Rails/RenderPlainText:
   Enabled: true
+
 Rails/SaveBang:
   Enabled: true
   AllowImplicitReturn: false
   Exclude:
     - "spec/factories/*.rb"
+
 Rails/ShortI18n:
   Enabled: true
+
 Rails/WhereExists:
   Enabled: true
+
 Rails/WhereNot:
   Enabled: true
-FactoryBot/AssociationStyle:
-  Enabled: true
-  EnforcedStyle: explicit
