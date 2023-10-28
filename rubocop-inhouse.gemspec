@@ -18,8 +18,8 @@ Gem::Specification.new do |spec|
   spec.metadata["source_code_uri"] = spec.homepage
   spec.metadata["changelog_uri"] = spec.homepage
 
-  # Specify which files should be added to the gem when it is released.
-  # The `git ls-files -z` loads the files in the RubyGem that have been added into git.
+  # Specify which files should be added to the gem when it is released. The `git
+  # ls-files -z` loads the files in the RubyGem that have been added into git.
   spec.files = Dir[
     "README.md",
     "STYLEGUIDE.md",
@@ -33,8 +33,10 @@ Gem::Specification.new do |spec|
   spec.add_dependency "rubocop-capybara"
   spec.add_dependency "rubocop-performance"
   spec.add_dependency "rubocop-rails"
+  spec.add_dependency "rubocop-rake"
   spec.add_dependency "rubocop-rspec"
 
   # For more information and examples about making a new gem, check out our
   # guide at: https://bundler.io/guides/creating_gem.html
+  spec.metadata["rubygems_mfa_required"] = "true"
 end

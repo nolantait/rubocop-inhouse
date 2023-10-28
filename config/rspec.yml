@@ -1,3 +1,69 @@
+RSpec/BeEq:
+  Enabled: true
+
+RSpec/BeEmpty:
+  Enabled: true
+
+RSpec/BeNil:
+  Enabled: true
+
+RSpec/DuplicatedMetadata:
+  Enabled: true
+
+RSpec/ChangeByZero:
+  Enabled: true
+
+RSpec/ContainExactly:
+  Enabled: true
+
+RSpec/EmptyMetadata:
+  Enabled: true
+
+RSpec/Eq:
+  Enabled: true
+
+RSpec/ExcessiveDocstringSpacing:
+  Enabled: true
+
+RSpec/IdenticalEqualityAssertion:
+  Enabled: true
+
+RSpec/IndexedLet:
+  Enabled: true
+
+RSpec/MatchArray:
+  Enabled: true
+
+RSpec/MetadataStyle:
+  Enabled: true
+
+RSpec/NoExpectationExample:
+  Enabled: true
+
+RSpec/PendingWithoutReason:
+  Enabled: true
+
+RSpec/ReceiveMessages:
+  Enabled: true
+
+RSpec/RedundantAround:
+  Enabled: true
+
+RSpec/SkipBlockInsideExample:
+  Enabled: true
+
+RSpec/SortMetadata:
+  Enabled: true
+
+RSpec/SpecFilePathSuffix:
+  Enabled: true
+
+RSpec/SubjectDeclaration:
+  Enabled: true
+
+RSpec/VerifiedDoubleReference:
+  Enabled: true
+
 RSpec/SpecFilePathFormat:
   Enabled: true
   Exclude:
@@ -98,3 +164,21 @@ RSpec/VoidExpect:
   Enabled: false
   Exclude:
     - '**/spec/factories/*'
+
+RSpec/Rails/AvoidSetupHook:
+  Enabled: true
+
+RSpec/Rails/HaveHttpStatus:
+  Enabled: true
+
+RSpec/Rails/InferredSpecType:
+  Enabled: true
+
+RSpec/Rails/MinitestAssertions:
+  Enabled: true
+
+RSpec/Rails/NegationBeValid:
+  Enabled: true
+
+RSpec/Rails/TravelAround:
+  Enabled: true

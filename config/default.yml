@@ -2,9 +2,20 @@ require:
   - rubocop-inhouse
   - rubocop-performance
   - rubocop-rspec
+  - rubocop-rake
 
 inherit_from:
-  - .rspec.yml
+  - ./rspec.yml
+  - ./performance.yml
+
+Gemspec/DeprecatedAttributeAssignment:
+  Enabled: true
+
+Gemspec/DevelopmentDependencies:
+  Enabled: true
+
+Gemspec/RequireMFA:
+  Enabled: true
 
 # ====   LAYOUT   ====
 Layout/BlockAlignment:
@@ -49,6 +60,9 @@ Layout/FirstMethodArgumentLineBreak:
   Enabled: true
 
 Layout/FirstMethodParameterLineBreak:
+  Enabled: true
+
+Layout/LineContinuationSpacing:
   Enabled: true
 
 Layout/LineContinuationLeadingSpace:
@@ -137,7 +151,16 @@ Lint/BinaryOperatorWithIdenticalOperands:
 Lint/ConstantOverwrittenInRescue:
   Enabled: true
 
+Lint/DeprecatedConstants:
+  Enabled: true
+
 Lint/DuplicateBranch:
+  Enabled: true
+
+Lint/DuplicateMagicComment:
+  Enabled: true
+
+Lint/DuplicateMatchPattern:
   Enabled: true
 
 Lint/DuplicateRegexpCharacterClassElement:
@@ -150,6 +173,15 @@ Lint/EmptyClass:
   Enabled: true
 
 Lint/EmptyInPattern:
+  Enabled: true
+
+Lint/IncompatibleIoSelectWithFiberScheduler:
+  Enabled: true
+
+Lint/LambdaWithoutLiteralBlock:
+  Enabled: true
+
+Lint/MixedCaseRange:
   Enabled: true
 
 Lint/NoReturnInBeginEndBlocks:
@@ -170,6 +202,12 @@ Lint/OrAssignmentToConstant:
 Lint/RedundantDirGlobSort:
   Enabled: true
 
+Lint/RedundantRegexpQuantifiers:
+  Enabled: true
+
+Lint/RefinementImportMethods:
+  Enabled: true
+
 Lint/RequireRangeParentheses:
   Enabled: true
 
@@ -180,6 +218,9 @@ Lint/ShadowingOuterLocalVariable:
   Enabled: false
 
 Lint/SymbolConversion:
+  Enabled: true
+
+Lint/ToEnumArguments:
   Enabled: true
 
 Lint/TripleQuotes:
@@ -200,6 +241,9 @@ Lint/UnusedMethodArgument:
 Lint/UselessRescue:
   Enabled: true
 
+Lint/UselessRuby2Keywords:
+  Enabled: true
+
 # ====   METRICS   ====
 Metrics/AbcSize:
  Max: 20
@@ -213,6 +257,9 @@ Metrics/BlockLength:
     - '**/*.rake'
     - '**/factories/**/*'
     - '**/config/routes.rb'
+
+Metrics/CollectionLiteralLength:
+  Enabled: true
 
 Metrics/ClassLength:
   CountAsOne: ['array', 'hash']
@@ -249,24 +296,10 @@ Naming/BlockForwarding:
 Security/CompoundHash:
   Enabled: true
 
+Security/IoMethods:
+  Enabled: true
+
 # ====   STYE   ====
-Style/FrozenStringLiteralComment:
-  Enabled: true
-  Exclude:
-    - "**/db/schema.rb"
-
-Style/WordArray:
-  Enabled: true
-  Exclude:
-    - '**/db/migrate/*'
-    - '**/db/schema.rb'
-
-Style/NumericLiterals:
-  Enabled: true
-  Exclude:
-    - '**/db/migrate/*'
-    - '**/db/schema.rb'
-
 Style/ArgumentsForwarding:
   Enabled: true
 
@@ -294,12 +327,41 @@ Style/ConstantVisibility:
 Style/ConcatArrayLiterals:
   Enabled: true
 
+Style/DataInheritance:
+  Enabled: true
+
+Style/DirEmpty:
+  Enabled: true
+
 Style/Documentation:
   Enabled: false
+
+Style/DocumentDynamicEvalDefinition:
+  Enabled: true
+
+Style/EmptyHeredoc:
+  Enabled: true
+
+Style/EnvHome:
+  Enabled: true
+
+Style/ExactRegexpMatch:
+  Enabled: true
 
 Style/EndlessMethod:
   Enabled: true
   EnforcedStyle: disallow
+
+Style/FileEmpty:
+  Enabled: true
+
+Style/FileWrite:
+  Enabled: true
+
+Style/FrozenStringLiteralComment:
+  Enabled: true
+  Exclude:
+    - "**/db/schema.rb"
 
 Style/FetchEnvVar:
   Enabled: true
@@ -333,6 +395,12 @@ Style/IpAddresses:
 
 Style/Lambda:
   EnforcedStyle: literal
+
+Style/MagicCommentFormat:
+  Enabled: true
+
+Style/MultilineInPatternThen:
+  Enabled: true
 
 Style/MapCompactWithConditionalBlock:
   Enabled: true
@@ -368,6 +436,15 @@ Style/NumberedParameters:
   Enabled: true
   EnforcedStyle: disallow
 
+Style/NumberedParametersLimit:
+  Enabled: true
+
+Style/NumericLiterals:
+  Enabled: true
+  Exclude:
+    - '**/db/migrate/*'
+    - '**/db/schema.rb'
+
 Style/ObjectThen:
   Enabled: true
   EnforcedStyle: then
@@ -379,6 +456,33 @@ Style/OperatorMethodCall:
   Enabled: true
 
 Style/OptionHash:
+  Enabled: true
+
+Style/QuotedSymbols:
+  Enabled: true
+
+Style/RedundantArrayConstructor:
+  Enabled: true
+
+Style/RedundantCurrentDirectoryInPath:
+  Enabled: true
+
+Style/RedundantFilterChain:
+  Enabled: true
+
+Style/RedundantHeredocDelimiterQuotes:
+  Enabled: true
+
+Style/RedundantLineContinuation:
+  Enabled: true
+
+Style/RedundantRegexpArgument:
+  Enabled: true
+
+Style/RedundantRegexpConstructor:
+  Enabled: true
+
+Style/RedundantSelfAssignmentBranch:
   Enabled: true
 
 Style/RedundantArgument:
@@ -399,7 +503,13 @@ Style/RedundantInitialize:
 Style/RedundantStringEscape:
   Enabled: true
 
+Style/ReturnNilInPredicateMethodDefinition:
+  Enabled: true
+
 Style/SelectByRegexp:
+  Enabled: true
+
+Style/SingleLineDoEndBlock:
   Enabled: true
 
 Style/StaticClass:
@@ -428,5 +538,14 @@ Style/TopLevelMethodDefinition:
 Style/TrailingCommaInBlockArgs:
   Enabled: true
 
+Style/YAMLFileRead:
+  Enabled: true
+
 Style/UnlessLogicalOperators:
   Enabled: true
+
+Style/WordArray:
+  Enabled: true
+  Exclude:
+    - '**/db/migrate/*'
+    - '**/db/schema.rb'
