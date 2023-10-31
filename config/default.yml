@@ -8,6 +8,11 @@ inherit_from:
   - ./rspec.yml
   - ./performance.yml
 
+AllCops:
+  NewCops: enable
+  Exclude:
+    - "**/bin/*"
+
 Gemspec/DeprecatedAttributeAssignment:
   Enabled: true
 
