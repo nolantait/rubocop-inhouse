@@ -251,7 +251,8 @@ Lint/UselessRuby2Keywords:
 
 # ====   METRICS   ====
 Metrics/AbcSize:
- Max: 20
+  Max: 20
+  CountRepeatedAttributes: false
 
 Metrics/BlockLength:
   CountComments: false
