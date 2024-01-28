@@ -1,6 +1,10 @@
 Metrics/AbcSize:
   Max: 20
   CountRepeatedAttributes: false
+  # Excluding controllers here because respond_to blocks and others make this
+  # higher than they otherwise should be
+  Exclude:
+    - "**/app/controllers/**/*"
 
 Metrics/BlockLength:
   CountComments: false
