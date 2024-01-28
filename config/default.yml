@@ -12,6 +12,8 @@ AllCops:
   NewCops: enable
   Exclude:
     - "**/bin/*"
+    - "**/db/migrate/*"
+    - "**/db/schema.rb"
 
 Gemspec/DeprecatedAttributeAssignment:
   Enabled: true
@@ -81,7 +83,6 @@ Layout/LineLength:
   Max: 80
   Exclude:
     - '**/spec/**/*'
-    - '**/db/schema.rb'
 
 Layout/MultilineArrayBraceLayout:
   EnforcedStyle: new_line
@@ -107,7 +108,7 @@ Layout/MultilineMethodArgumentLineBreaks:
   AllowMultilineFinalElement: true
 
 Layout/MultilineMethodCallBraceLayout:
-  EnforcedStyle: new_line
+  Enabled: true
 
 Layout/MultilineMethodCallIndentation:
   EnforcedStyle: indented
@@ -258,7 +259,6 @@ Metrics/BlockLength:
   CountComments: false
   Max: 25
   Exclude:
-    - '**/db/schema.rb'
     - '**/spec/**/*'
     - '**/*.rake'
     - '**/factories/**/*'
@@ -366,8 +366,6 @@ Style/FileWrite:
 
 Style/FrozenStringLiteralComment:
   Enabled: true
-  Exclude:
-    - "**/db/schema.rb"
 
 Style/FetchEnvVar:
   Enabled: true
@@ -449,7 +447,6 @@ Style/NumericLiterals:
   Enabled: true
   Exclude:
     - '**/db/migrate/*'
-    - '**/db/schema.rb'
 
 Style/ObjectThen:
   Enabled: true
@@ -552,6 +549,3 @@ Style/UnlessLogicalOperators:
 
 Style/WordArray:
   Enabled: true
-  Exclude:
-    - '**/db/migrate/*'
-    - '**/db/schema.rb'
