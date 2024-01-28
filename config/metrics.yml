@@ -6,32 +6,32 @@ Metrics/BlockLength:
   CountComments: false
   Max: 25
   Exclude:
-    - '**/spec/**/*'
-    - '**/*.rake'
-    - '**/factories/**/*'
-    - '**/config/routes.rb'
+    - "**/spec/**/*"
+    - "**/*.rake"
+    - "**/factories/**/*"
+    - "**/config/routes.rb"
 
 Metrics/CollectionLiteralLength:
   Enabled: true
 
 Metrics/ClassLength:
-  CountAsOne: ['array', 'hash']
+  CountAsOne: ["array", "hash"]
   Max: 100
   Exclude:
-    - '**/app/controllers/**/*'
+    - "**/app/controllers/**/*"
 
 Metrics/CyclomaticComplexity:
   Max: 10
 
 Metrics/MethodLength:
-  CountAsOne: ['array', 'hash']
+  CountAsOne: ["array", "hash"]
   Max: 20
 
 Metrics/ModuleLength:
-  CountAsOne: ['array', 'hash']
+  CountAsOne: ["array", "hash"]
   Max: 100
   Exclude:
-    - '**/spec/**/*'
+    - "**/spec/**/*"
 
 Metrics/ParameterLists:
   Max: 2

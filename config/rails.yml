@@ -8,30 +8,6 @@ inherit_from:
   - ./capybara.yml
   - ./factory_bot.yml
 
-Layout/BlockAlignment:
-  Exclude:
-    - "**/*.erb"
-
-Layout/IndentationWidth:
-  Exclude:
-    - "**/*.erb"
-
-Layout/InitialIndentation:
-  Exclude:
-    - "**/*.erb"
-
-Layout/SpaceInsideParens:
-  Exclude:
-    - "**/*.erb"
-
-Layout/TrailingEmptyLines:
-  Exclude:
-    - "**/*.erb"
-
-Layout/TrailingWhitespace:
-  Exclude:
-    - "**/*.erb"
-
 Rails/ActionControllerTestCase:
   Enabled: false
 

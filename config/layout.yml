@@ -1,5 +1,7 @@
 Layout/BlockAlignment:
   EnforcedStyleAlignWith: start_of_block
+  Exclude:
+    - "**/*.erb"
 
 Layout/ClassStructure:
   ExpectedOrder:
@@ -41,6 +43,14 @@ Layout/FirstMethodArgumentLineBreak:
 
 Layout/FirstMethodParameterLineBreak:
   Enabled: true
+
+Layout/IndentationWidth:
+  Exclude:
+    - "**/*.erb"
+
+Layout/InitialIndentation:
+  Exclude:
+    - "**/*.erb"
 
 Layout/LineContinuationSpacing:
   Enabled: true
@@ -89,6 +99,10 @@ Layout/MultilineMethodCallIndentation:
 Layout/SpaceAroundMethodCallOperator:
   Enabled: true
 
+Layout/SpaceInsideParens:
+  Exclude:
+    - "**/*.erb"
+
 Layout/MultilineMethodDefinitionBraceLayout:
   EnforcedStyle: new_line
 
@@ -107,3 +121,10 @@ Layout/SpaceBeforeBrackets:
 Layout/SpaceInLambdaLiteral:
   EnforcedStyle: require_no_space
 
+Layout/TrailingEmptyLines:
+  Exclude:
+    - "**/*.erb"
+
+Layout/TrailingWhitespace:
+  Exclude:
+    - "**/*.erb"
