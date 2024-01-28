@@ -9,7 +9,7 @@ Metrics/BlockLength:
     - "**/spec/**/*"
     - "**/*.rake"
     - "**/factories/**/*"
-    - "**/config/routes.rb"
+    - "**/config/**/*"
 
 Metrics/CollectionLiteralLength:
   Enabled: true

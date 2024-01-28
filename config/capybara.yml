@@ -1,5 +1,6 @@
 Capybara/ClickLinkOrButtonStyle:
   Enabled: true
+  EnforcedStyle: strict
 
 Capybara/CurrentPathExpectation:
   Enabled: true
