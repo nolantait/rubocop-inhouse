@@ -24,7 +24,7 @@ Metrics/CyclomaticComplexity:
   Max: 10
 
 Metrics/MethodLength:
-  CountAsOne: ["array", "hash"]
+  CountAsOne: ["array", "hash", "method_call"]
   Max: 20
 
 Metrics/ModuleLength:
