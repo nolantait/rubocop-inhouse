@@ -1,3 +1,9 @@
+Layout/ArgumentAlignment:
+  Enabled: true
+
+Layout/ArrayAlignment:
+  Enabled: true
+
 Layout/BlockAlignment:
   EnforcedStyleAlignWith: start_of_block
   Exclude:

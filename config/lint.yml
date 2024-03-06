@@ -50,6 +50,9 @@ Lint/IncompatibleIoSelectWithFiberScheduler:
 Lint/LambdaWithoutLiteralBlock:
   Enabled: true
 
+Lint/MissingSuper:
+  Enabled: false
+
 Lint/MixedCaseRange:
   Enabled: true
 
