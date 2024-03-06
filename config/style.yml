@@ -84,7 +84,7 @@ Style/InvertibleUnlessCondition:
   Enabled: true
 
 Style/InlineComment:
-  Enabled: true
+  Enabled: false
 
 Style/IpAddresses:
   Enabled: true
