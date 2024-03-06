@@ -2,7 +2,7 @@
 
 module Rubocop
   module Inhouse
-    VERSION = "0.1.2"
+    VERSION = "0.1.3"
     public_constant :VERSION
   end
 end
