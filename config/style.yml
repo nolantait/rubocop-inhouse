@@ -48,7 +48,7 @@ Style/ExactRegexpMatch:
 
 Style/EndlessMethod:
   Enabled: true
-  EnforcedStyle: disallow
+  EnforcedStyle: allow_single_line
 
 Style/FileEmpty:
   Enabled: true
