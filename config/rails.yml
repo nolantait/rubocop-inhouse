@@ -203,3 +203,21 @@ Rails/WhereExists:
 
 Rails/WhereNot:
   Enabled: true
+
+RSpecRails/AvoidSetupHook:
+  Enabled: true
+
+RSpecRails/HaveHttpStatus:
+  Enabled: true
+
+RSpecRails/InferredSpecType:
+  Enabled: true
+
+RSpecRails/MinitestAssertions:
+  Enabled: true
+
+RSpecRails/NegationBeValid:
+  Enabled: true
+
+RSpecRails/TravelAround:
+  Enabled: true

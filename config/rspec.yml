@@ -165,20 +165,3 @@ RSpec/VoidExpect:
   Exclude:
     - '**/spec/factories/*'
 
-RSpec/Rails/AvoidSetupHook:
-  Enabled: true
-
-RSpec/Rails/HaveHttpStatus:
-  Enabled: true
-
-RSpec/Rails/InferredSpecType:
-  Enabled: true
-
-RSpec/Rails/MinitestAssertions:
-  Enabled: true
-
-RSpec/Rails/NegationBeValid:
-  Enabled: true
-
-RSpec/Rails/TravelAround:
-  Enabled: true
