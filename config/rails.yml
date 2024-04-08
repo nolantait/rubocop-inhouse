@@ -9,6 +9,15 @@ inherit_from:
   - ./capybara.yml
   - ./factory_bot.yml
 
+Rails/ActionFilter:
+  Enabled: true
+
+Rails/ActiveRecordCallbacksOrder:
+  Enabled: true
+
+Rails/AfterCommitOverride:
+  Enabled: true
+
 Rails/ActionControllerTestCase:
   Enabled: false
 
@@ -60,6 +69,22 @@ Rails/ExpandedDateRange:
 Rails/FreezeTime:
   Enabled: true
 
+Rails/CreateTableWithTimestamps:
+  Enabled: false
+
+Rails/Date:
+  Enabled: true
+  EnforcedStyle: strict
+
+Rails/Delegate:
+  Enabled: true
+
+Rails/DefaultScope:
+  Enabled: true
+
+Rails/FindById:
+  Enabled: true
+
 Rails/I18nLazyLookup:
   Enabled: true
 
@@ -72,7 +97,41 @@ Rails/I18nLocaleTexts:
 Rails/IgnoredColumnsAssignment:
   Enabled: true
 
+Rails/Inquiry:
+  Enabled: true
+
 Rails/MigrationClassName:
+  Enabled: true
+
+Rails/MailerName:
+  Enabled: true
+
+Rails/MatchRoute:
+  Enabled: true
+
+Rails/NegateInclude:
+  Enabled: true
+
+Rails/OrderById:
+  Enabled: true
+
+Rails/Output:
+  Exclude:
+    - "app/views/**/*.rb"
+
+Rails/Pluck:
+  Enabled: true
+
+Rails/PluckId:
+  Enabled: true
+
+Rails/PluckInWhere:
+  Enabled: true
+
+Rails/RenderInline:
+  Enabled: true
+
+Rails/RenderPlainText:
   Enabled: true
 
 Rails/RedundantActiveRecordAllMethod:
@@ -94,6 +153,15 @@ Rails/RootPublicPath:
   Enabled: true
 
 Rails/RootPathnameMethods:
+  Enabled: true
+
+Rails/SaveBang:
+  Enabled: true
+  AllowImplicitReturn: false
+  Exclude:
+    - "spec/factories/**/*.rb"
+
+Rails/ShortI18n:
   Enabled: true
 
 Rails/SquishedSQLHeredocs:
@@ -135,69 +203,7 @@ Rails/WhereMissing:
 Rails/WhereNotWithMultipleConditions:
   Enabled: true
 
-Rails/ActionFilter:
-  Enabled: true
 
-Rails/ActiveRecordCallbacksOrder:
-  Enabled: true
-
-Rails/AfterCommitOverride:
-  Enabled: true
-
-Rails/CreateTableWithTimestamps:
-  Enabled: false
-
-Rails/Date:
-  Enabled: true
-  EnforcedStyle: strict
-
-Rails/Delegate:
-  Enabled: true
-
-Rails/DefaultScope:
-  Enabled: true
-
-Rails/FindById:
-  Enabled: true
-
-Rails/Inquiry:
-  Enabled: true
-
-Rails/MailerName:
-  Enabled: true
-
-Rails/MatchRoute:
-  Enabled: true
-
-Rails/NegateInclude:
-  Enabled: true
-
-Rails/OrderById:
-  Enabled: true
-
-Rails/Pluck:
-  Enabled: true
-
-Rails/PluckId:
-  Enabled: true
-
-Rails/PluckInWhere:
-  Enabled: true
-
-Rails/RenderInline:
-  Enabled: true
-
-Rails/RenderPlainText:
-  Enabled: true
-
-Rails/SaveBang:
-  Enabled: true
-  AllowImplicitReturn: false
-  Exclude:
-    - "spec/factories/**/*.rb"
-
-Rails/ShortI18n:
-  Enabled: true
 
 Rails/WhereExists:
   Enabled: true
