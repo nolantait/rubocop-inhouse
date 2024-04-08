@@ -3,7 +3,7 @@ Lint/AmbiguousAssignment:
 
 Lint/AmbiguousBlockAssociation:
   Exclude:
-    - "**/spec/**/*"
+    - "spec/**/*.rb"
 
 Lint/AmbiguousOperatorPrecedence:
   Enabled: true

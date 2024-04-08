@@ -67,101 +67,101 @@ RSpec/VerifiedDoubleReference:
 RSpec/SpecFilePathFormat:
   Enabled: true
   Exclude:
-    - "**/spec/factories/*"
-    - "**/spec/components/**/*"
+    - "spec/factories/**/*.rb"
+    - "spec/components/**/*.rb"
 
 RSpec/MissingExampleGroupArgument:
   Enabled: true
   Exclude:
-    - '**/spec/factories/*'
+    - 'spec/factories/**/*.rb'
 
 RSpec/EmptyExampleGroup:
   Enabled: true
   Exclude:
-    - '**/spec/factories/*'
+    - 'spec/factories/**/*.rb'
 
 RSpec/AnyInstance:
   Enabled: false
   Exclude:
-    - '**/spec/factories/*'
+    - 'spec/factories/**/*.rb'
 
 RSpec/BeforeAfterAll:
   Enabled: false
   Exclude:
-    - '**/spec/factories/*'
+    - 'spec/factories/**/*.rb'
 
 RSpec/ContextWording:
   Enabled: false
   Exclude:
-    - '**/spec/factories/*'
+    - 'spec/factories/**/*.rb'
 
 RSpec/DescribeClass:
   Enabled: false
   Exclude:
-    - '**/spec/factories/*'
+    - 'spec/factories/**/*.rb'
 
 RSpec/ExampleLength:
   Enabled: false
   Exclude:
-    - '**/spec/factories/*'
+    - 'spec/factories/**/*.rb'
 
 RSpec/ExpectInHook:
   Enabled: false
   Exclude:
-    - '**/spec/factories/*'
+    - 'spec/factories/**/*.rb'
 
 RSpec/FilePath:
   Enabled: false
   Exclude:
-    - '**/spec/factories/*'
+    - 'spec/factories/**/*.rb'
 
 RSpec/InstanceVariable:
   Enabled: false
   Exclude:
-    - '**/spec/factories/*'
+    - 'spec/factories/**/*.rb'
 
 RSpec/LetSetup:
   Enabled: false
   Exclude:
-    - '**/spec/factories/*'
+    - 'spec/factories/**/*.rb'
 
 RSpec/MessageChain:
   Enabled: false
   Exclude:
-    - '**/spec/factories/*'
+    - 'spec/factories/**/*.rb'
 
 RSpec/MessageSpies:
   Enabled: false
   Exclude:
-    - '**/spec/factories/*'
+    - 'spec/factories/**/*.rb'
 
 RSpec/MultipleExpectations:
   Enabled: false
   Exclude:
-    - '**/spec/factories/*'
+    - 'spec/factories/**/*.rb'
 
 RSpec/NamedSubject:
   Enabled: false
   Exclude:
-    - '**/spec/factories/*'
+    - 'spec/factories/**/*.rb'
 
 RSpec/NestedGroups:
   Max: 7
   Exclude:
-    - '**/spec/factories/*'
+    - 'spec/factories/**/*.rb'
 
 RSpec/SubjectStub:
   Enabled: false
   Exclude:
-    - '**/spec/factories/*'
+    - 'spec/factories/**/*.rb'
 
 RSpec/VerifiedDoubles:
   Enabled: false
   Exclude:
-    - '**/spec/factories/*'
+    - 'spec/factories/**/*.rb'
 
 RSpec/VoidExpect:
   Enabled: false
   Exclude:
-    - '**/spec/factories/*'
+    - 'spec/factories/**/*.rb'
 

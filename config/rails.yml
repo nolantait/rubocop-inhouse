@@ -3,6 +3,7 @@ require:
   - rubocop-rails
   - rubocop-capybara
   - rubocop-factory_bot
+  - rubocop-rspec_rails
 
 inherit_from:
   - ./capybara.yml
@@ -193,7 +194,7 @@ Rails/SaveBang:
   Enabled: true
   AllowImplicitReturn: false
   Exclude:
-    - "spec/factories/*.rb"
+    - "spec/factories/**/*.rb"
 
 Rails/ShortI18n:
   Enabled: true
