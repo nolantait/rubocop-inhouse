@@ -160,6 +160,7 @@ Rails/SaveBang:
   AllowImplicitReturn: false
   Exclude:
     - "spec/factories/**/*.rb"
+    - "config/**/*.rb"
 
 Rails/ShortI18n:
   Enabled: true
