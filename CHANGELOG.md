@@ -11,3 +11,10 @@
 ## [0.1.4] - 2024-03-31
 
 - Moves RSpecRails to proper namespace and places in Rails configs
+
+## [0.1.6] - 2024-05-27
+
+- Removes Style/StringHashKeys, it was too annoying to disable in all the
+  situations it was needed.
+- Adds exclusion for savebangs in configs
+- Disables some cops in app/views for better Phlex support

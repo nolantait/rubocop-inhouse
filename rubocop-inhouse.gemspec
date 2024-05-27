@@ -9,7 +9,8 @@ Gem::Specification.new do |spec|
   spec.email = ["nolanjtait@gmail.com"]
 
   spec.summary = "Rubocop configuration for InHouse projects"
-  spec.description = "This is the rubocop configuration we use at inhouse.work for all our projects"
+  spec.description = "This is the rubocop configuration we use at " \
+                     "inhouse.work for all our projects"
   spec.homepage = "https://github.com/nolantait/rubocop-inhouse"
   spec.license = "MIT"
   spec.required_ruby_version = ">= 3.2.0"
@@ -22,7 +23,6 @@ Gem::Specification.new do |spec|
   # ls-files -z` loads the files in the RubyGem that have been added into git.
   spec.files = Dir[
     "README.md",
-    "STYLEGUIDE.md",
     "LICENSE.txt",
     "config/*.yml",
     "lib/**/*.rb",
