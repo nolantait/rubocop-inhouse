@@ -19,21 +19,17 @@ Inherit all of the stylistic rules and cops through an inheritance declaration
 in your `.rubocop.yml`:
 
   ```yaml
-  # .rubocop.yml
+  require:
+    - rubocop-inhouse
   inherit_gem:
     rubocop-inhouse:
     - config/default.yml # generic Ruby rules and cops
     - config/rails.yml # Rails-specific rules and cops
-  ```
 
-Alternatively, only require the additional custom cops in your `.rubocop.yml`
-without inheriting/enabling the other stylistic rules:
+  AllCops:
+    NewCops: enable
 
-  ```yaml
-  # .rubocop.yml
-  require:
-    - rubocop-inhouse # generic Ruby cops only
-    - rubocop-inhouse-rails # Rails-specific cops only
+  # The rest of your overrides here
   ```
 
 For more granular control over which of RuboCop's rules are enabled for your
