@@ -214,9 +214,7 @@ Style/StringChars:
   Enabled: true
 
 Style/StringHashKeys:
-  Enabled: true
-  Exclude:
-    - "config/routes.rb"
+  Enabled: false
 
 Style/SwapValues:
   Enabled: true
