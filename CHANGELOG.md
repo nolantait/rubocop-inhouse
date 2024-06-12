@@ -18,3 +18,9 @@
   situations it was needed.
 - Adds exclusion for savebangs in configs
 - Disables some cops in app/views for better Phlex support
+
+## [0.1.7] - 2024-06-12
+
+- Removes RSpec/SpecFilePath
+- Adds rubocop-factory\_bot
+- Adds rubocop-rspec\_rails
