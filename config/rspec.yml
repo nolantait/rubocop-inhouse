@@ -110,11 +110,6 @@ RSpec/ExpectInHook:
   Exclude:
     - 'spec/factories/**/*.rb'
 
-RSpec/FilePath:
-  Enabled: false
-  Exclude:
-    - 'spec/factories/**/*.rb'
-
 RSpec/InstanceVariable:
   Enabled: false
   Exclude:
