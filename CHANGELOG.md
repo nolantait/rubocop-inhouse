@@ -24,3 +24,9 @@
 - Removes RSpec/SpecFilePath
 - Adds rubocop-factory\_bot
 - Adds rubocop-rspec\_rails
+
+## [0.1.8] - 2024-07-07
+
+- Adds more liberal block delimiter options for phlex components
+- Disables Rails/DeprecatedActiveModelErrorsMethods which conflicts with
+  safe_params from `dry-rails`
