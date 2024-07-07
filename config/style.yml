@@ -10,6 +10,10 @@ Style/ArrayIntersect:
 Style/AutoResourceCleanup:
   Enabled: true
 
+Style/BlockDelimiters:
+  Exclude:
+    - app/views/**/*.rb
+
 Style/CollectionCompact:
   Enabled: true
 

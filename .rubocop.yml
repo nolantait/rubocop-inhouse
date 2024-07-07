@@ -1,3 +1,6 @@
+require:
+  - rubocop-inhouse
+
 inherit_from:
   - ./config/default.yml
   - ./config/rails.yml

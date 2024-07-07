@@ -43,7 +43,7 @@ Rails/DangerousColumnNames:
   Enabled: true
 
 Rails/DeprecatedActiveModelErrorsMethods:
-  Enabled: true
+  Enabled: false
 
 Rails/DotSeparatedKeys:
   Enabled: true
@@ -159,8 +159,9 @@ Rails/SaveBang:
   Enabled: true
   AllowImplicitReturn: false
   Exclude:
-    - "spec/factories/**/*.rb"
+    - "spec/**/*.rb"
     - "config/**/*.rb"
+    - "lib/**/*.rb"
 
 Rails/ShortI18n:
   Enabled: true
