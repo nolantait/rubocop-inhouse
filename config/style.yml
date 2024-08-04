@@ -12,7 +12,7 @@ Style/AutoResourceCleanup:
 
 Style/BlockDelimiters:
   Exclude:
-    - app/views/**/*.rb
+    - "**/app/views/**/*.rb"
 
 Style/CollectionCompact:
   Enabled: true

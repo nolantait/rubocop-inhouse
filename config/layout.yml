@@ -71,7 +71,7 @@ Layout/LineEndStringConcatenationIndentation:
 Layout/LineLength:
   Max: 80
   Exclude:
-    - "spec/**/*"
+    - "**/spec/**/*"
 
 Layout/MultilineArrayBraceLayout:
   EnforcedStyle: new_line

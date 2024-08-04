@@ -4,17 +4,17 @@ Metrics/AbcSize:
   # Excluding controllers here because respond_to blocks and others make this
   # higher than they otherwise should be
   Exclude:
-    - "app/controllers/**/*"
-    - "app/views/**/*.rb"
+    - "**/app/controllers/**/*"
+    - "**/app/views/**/*.rb"
 
 Metrics/BlockLength:
   CountComments: false
   Max: 25
   Exclude:
-    - "spec/**/*.rb"
-    - "config/**/*.rb"
-    - "app/views/**/*.rb"
-    - "lib/tasks/**/*.rake"
+    - "**/spec/**/*.rb"
+    - "**/config/**/*.rb"
+    - "**/app/views/**/*.rb"
+    - "**/lib/tasks/**/*.rake"
     - "**/*.rake"
 
 Metrics/CollectionLiteralLength:
@@ -24,8 +24,8 @@ Metrics/ClassLength:
   CountAsOne: ["array", "hash"]
   Max: 100
   Exclude:
-    - "app/controllers/**/*.rb"
-    - "app/views/**/*.rb"
+    - "**/app/controllers/**/*.rb"
+    - "**/app/views/**/*.rb"
 
 Metrics/CyclomaticComplexity:
   Max: 10
@@ -34,13 +34,13 @@ Metrics/MethodLength:
   CountAsOne: ["array", "hash", "method_call"]
   Max: 20
   Exclude:
-    - "app/views/**/*.rb"
+    - "**/app/views/**/*.rb"
 
 Metrics/ModuleLength:
   CountAsOne: ["array", "hash"]
   Max: 100
   Exclude:
-    - "spec/**/*.rb"
+    - "**/spec/**/*.rb"
 
 Metrics/ParameterLists:
   Max: 2
@@ -49,4 +49,4 @@ Metrics/ParameterLists:
 Metrics/PerceivedComplexity:
   Max: 8
   Exclude:
-    - "app/views/**/*.rb"
+    - "**/app/views/**/*.rb"

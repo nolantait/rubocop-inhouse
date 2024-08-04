@@ -159,9 +159,9 @@ Rails/SaveBang:
   Enabled: true
   AllowImplicitReturn: false
   Exclude:
-    - "spec/**/*.rb"
-    - "config/**/*.rb"
-    - "lib/**/*.rb"
+    - "**/spec/**/*.rb"
+    - "**/config/**/*.rb"
+    - "**/lib/**/*.rb"
 
 Rails/ShortI18n:
   Enabled: true
