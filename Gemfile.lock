@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    rubocop-inhouse (0.1.8)
+    rubocop-inhouse (0.1.9)
       rubocop (>= 1.5)
       rubocop-capybara (>= 2.1)
       rubocop-factory_bot (>= 2.2)
