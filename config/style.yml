@@ -167,9 +167,6 @@ Style/NumericLiterals:
   Exclude:
     - '**/db/migrate/*'
 
-Style/ParenthesesAroundCondition:
-  Enabled: true
-
 Style/PercentLiteralDelimiters:
   Enabled: true
   PreferredDelimiters:

@@ -85,10 +85,6 @@ Layout/FirstMethodParameterLineBreak:
 Layout/IndentationConsistency:
   Enabled: true
 
-Layout/IndentationWidth:
-  Exclude:
-    - "**/*.erb"
-
 # Detect hard tabs, no hard tabs.
 Layout/IndentationStyle:
   Enabled: true
@@ -98,6 +94,8 @@ Layout/IndentationStyle:
 # Doesn't behave properly with private-only concerns, so it's disabled.
 Layout/IndentationWidth:
   Enabled: false
+  Exclude:
+    - "**/*.erb"
 
 Layout/InitialIndentation:
   Exclude:
