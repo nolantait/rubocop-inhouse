@@ -1,8 +1,11 @@
 require:
-  - rubocop-inhouse
   - rubocop-performance
   - rubocop-rspec
   - rubocop-rake
+
+inherit_mode:
+  merge:
+    - Exclude
 
 inherit_from:
   - ./layout.yml
@@ -14,7 +17,9 @@ inherit_from:
 
 AllCops:
   NewCops: enable
+  SuggestExtensions: false
   Exclude:
+    - "data/**/*"
     - "**/bin/*"
     - "**/db/migrate/*.rb"
     - "**/db/schema.rb"

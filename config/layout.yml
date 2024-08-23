@@ -26,8 +26,41 @@ Layout/ClassStructure:
     - private_delegate
     - private_methods
 
+Layout/CaseIndentation:
+  Enabled: true
+  EnforcedStyle: end
+
+Layout/CommentIndentation:
+  Enabled: true
+
+Layout/ElseAlignment:
+  Enabled: true
+
+Layout/EmptyLineAfterMagicComment:
+  Enabled: true
+
+Layout/EmptyLinesAroundBlockBody:
+  Enabled: true
+  EnforcedStyle: no_empty_lines
+
+Layout/EmptyLinesAroundClassBody:
+  Enabled: true
+  EnforcedStyle: no_empty_lines
+
+Layout/EmptyLinesAroundMethodBody:
+  Enabled: true
+  EnforcedStyle: no_empty_lines
+
+Layout/EmptyLinesAroundModuleBody:
+  Enabled: true
+  EnforcedStyle: no_empty_lines
+
+# Align `end` with the matching keyword or starting expression except for
+# assignments, where it should be aligned with the LHS.
 Layout/EndAlignment:
+  Enabled: true
   EnforcedStyleAlignWith: variable
+  AutoCorrect: true
 
 Layout/FirstArgumentIndentation:
   EnforcedStyle: consistent
@@ -50,13 +83,29 @@ Layout/FirstMethodArgumentLineBreak:
 Layout/FirstMethodParameterLineBreak:
   Enabled: true
 
+Layout/IndentationConsistency:
+  Enabled: true
+
 Layout/IndentationWidth:
   Exclude:
     - "**/*.erb"
 
+# Detect hard tabs, no hard tabs.
+Layout/IndentationStyle:
+  Enabled: true
+
+# Two spaces, no tabs (for indentation).
+#
+# Doesn't behave properly with private-only concerns, so it's disabled.
+Layout/IndentationWidth:
+  Enabled: false
+
 Layout/InitialIndentation:
   Exclude:
     - "**/*.erb"
+
+Layout/LeadingCommentSpace:
+  Enabled: true
 
 Layout/LineContinuationSpacing:
   Enabled: true
@@ -102,13 +151,6 @@ Layout/MultilineMethodCallBraceLayout:
 Layout/MultilineMethodCallIndentation:
   EnforcedStyle: indented
 
-Layout/SpaceAroundMethodCallOperator:
-  Enabled: true
-
-Layout/SpaceInsideParens:
-  Exclude:
-    - "**/*.erb"
-
 Layout/MultilineMethodDefinitionBraceLayout:
   EnforcedStyle: new_line
 
@@ -118,14 +160,65 @@ Layout/MultilineMethodParameterLineBreaks:
 Layout/ParameterAlignment:
   EnforcedStyle: with_fixed_indentation
 
+# Use my_method(my_arg) not my_method( my_arg ) or my_method my_arg.
+Lint/RequireParentheses:
+  Enabled: true
+
+Lint/UriEscapeUnescape:
+  Enabled: true
+
+Layout/SpaceAfterColon:
+  Enabled: true
+
+Layout/SpaceAfterComma:
+  Enabled: true
+
+Layout/SpaceAroundEqualsInParameterDefault:
+  Enabled: true
+
+Layout/SpaceAroundKeyword:
+  Enabled: true
+
+# Use `foo {}` not `foo{}`.
+Layout/SpaceBeforeBlockBraces:
+  Enabled: true
+
+Layout/SpaceBeforeComma:
+  Enabled: true
+
+Layout/SpaceBeforeFirstArg:
+  Enabled: true
+
+# Use `->(x, y) { x + y }` not `-> (x, y) { x + y }`
+Layout/SpaceInLambdaLiteral:
+  Enabled: true
+
+Layout/SpaceInsideBlockBraces:
+  Enabled: true
+  EnforcedStyleForEmptyBraces: space
+
+Layout/SpaceInsideHashLiteralBraces:
+  Enabled: true
+  EnforcedStyle: space
+  EnforcedStyleForEmptyBraces: no_space
+
+Layout/SpaceAroundMethodCallOperator:
+  Enabled: true
+
+Layout/SpaceInsideParens:
+  Enabled: true
+  Exclude:
+    - "**/*.erb"
+
+# Use `hash[:key]` not `hash[ :key ]`
+Layout/SpaceInsideReferenceBrackets:
+  Enabled: true
+
 Layout/SingleLineBlockChain:
   Enabled: true
 
 Layout/SpaceBeforeBrackets:
   Enabled: true
-
-Layout/SpaceInLambdaLiteral:
-  EnforcedStyle: require_no_space
 
 Layout/TrailingEmptyLines:
   Exclude:

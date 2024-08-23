@@ -1,3 +1,8 @@
+Performance:
+  Exclude:
+    - "spec/**/*"
+    - "test/**/*"
+
 Performance/AncestorsInclude:
   Enabled: true
 
@@ -14,6 +19,9 @@ Performance/ConcurrentMonotonicTime:
   Enabled: true
 
 Performance/ConstantRegexp:
+  Enabled: true
+
+Performance/FlatMap:
   Enabled: true
 
 Performance/MapCompact:
@@ -53,4 +61,7 @@ Performance/StringInclude:
   Enabled: true
 
 Performance/Sum:
+  Enabled: true
+
+Performance/UnfreezeString:
   Enabled: true

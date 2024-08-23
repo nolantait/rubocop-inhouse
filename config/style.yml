@@ -1,3 +1,7 @@
+# We generally prefer &&/|| but like low-precedence and/or in context
+Style/AndOr:
+  Enabled: false
+
 Style/ArgumentsForwarding:
   Enabled: true
 
@@ -13,6 +17,10 @@ Style/AutoResourceCleanup:
 Style/BlockDelimiters:
   Exclude:
     - "**/app/views/**/*.rb"
+
+# Prefer Foo.method over Foo::method
+Style/ColonMethodCall:
+  Enabled: true
 
 Style/CollectionCompact:
   Enabled: true
@@ -30,6 +38,9 @@ Style/ConcatArrayLiterals:
   Enabled: true
 
 Style/DataInheritance:
+  Enabled: true
+
+Style/DefWithParentheses:
   Enabled: true
 
 Style/DirEmpty:
@@ -75,6 +86,11 @@ Style/HashConversion:
 Style/HashExcept:
   Enabled: true
 
+# Use Ruby >= 1.9 syntax for hashes. Prefer { a: :b } over { :a => :b }.
+Style/HashSyntax:
+  Enabled: true
+  EnforcedShorthandSyntax: either
+
 Style/IfWithBooleanLiteralBranches:
   Enabled: true
 
@@ -117,6 +133,10 @@ Style/MethodCallWithArgsParentheses:
 Style/MethodCalledOnDoEndBlock:
   Enabled: true
 
+# Defining a method with parameters needs parentheses.
+Style/MethodDefParentheses:
+  Enabled: true
+
 Style/MinMaxComparison:
   Enabled: true
 
@@ -144,6 +164,23 @@ Style/NumericLiterals:
   Exclude:
     - '**/db/migrate/*'
 
+Style/ParenthesesAroundCondition:
+  Enabled: true
+
+Style/PercentLiteralDelimiters:
+  Enabled: true
+  PreferredDelimiters:
+    default: "()"
+    "%i": "[]"
+    "%I": "[]"
+    "%r": "{}"
+    "%w": "[]"
+    "%W": "[]"
+
+# Use quotes for string literals when they are enough.
+Style/RedundantPercentQ:
+  Enabled: false
+
 Style/ObjectThen:
   Enabled: true
   EnforcedStyle: then
@@ -158,6 +195,9 @@ Style/OptionHash:
   Enabled: true
 
 Style/QuotedSymbols:
+  Enabled: true
+
+Style/ParenthesesAroundCondition:
   Enabled: true
 
 Style/RedundantArrayConstructor:
@@ -180,6 +220,10 @@ Style/RedundantRegexpArgument:
 
 Style/RedundantRegexpConstructor:
   Enabled: true
+
+Style/RedundantReturn:
+  Enabled: true
+  AllowMultipleReturnValues: true
 
 Style/RedundantSelfAssignmentBranch:
   Enabled: true
@@ -208,6 +252,10 @@ Style/ReturnNilInPredicateMethodDefinition:
 Style/SelectByRegexp:
   Enabled: true
 
+Style/Semicolon:
+  Enabled: true
+  AllowAsExpressionSeparator: true
+
 Style/SingleLineDoEndBlock:
   Enabled: true
 
@@ -220,11 +268,23 @@ Style/StringChars:
 Style/StringHashKeys:
   Enabled: false
 
+Style/StabbyLambdaParentheses:
+  Enabled: true
+
 Style/SwapValues:
   Enabled: true
 
+# Use `"foo"` not `'foo'` unless escaping is required
 Style/StringLiterals:
+  Enabled: true
   EnforcedStyle: double_quotes
+  Include:
+    - "app/**/*"
+    - "config/**/*"
+    - "lib/**/*"
+    - "test/**/*"
+    - "spec/**/*"
+    - "Gemfile"
 
 Style/StringLiteralsInInterpolation:
   EnforcedStyle: double_quotes
@@ -233,6 +293,12 @@ Style/TopLevelMethodDefinition:
   Enabled: true
 
 Style/TrailingCommaInBlockArgs:
+  Enabled: true
+
+Style/TrailingCommaInArrayLiteral:
+  Enabled: true
+
+Style/TrailingCommaInHashLiteral:
   Enabled: true
 
 Style/YAMLFileRead:
