@@ -46,7 +46,7 @@ Metrics/ModuleLength:
     - "**/spec/**/*.rb"
 
 Metrics/ParameterLists:
-  Max: 2
+  Max: 3
   CountKeywordArgs: false
 
 Metrics/PerceivedComplexity:
