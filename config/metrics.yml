@@ -11,10 +11,10 @@ Metrics/BlockLength:
   CountComments: false
   Max: 25
   Exclude:
+    - "**/app/controllers/**/*.rb"
     - "**/spec/**/*.rb"
     - "**/config/**/*.rb"
     - "**/app/views/**/*.rb"
-    - "**/lib/tasks/**/*.rake"
     - "**/*.rake"
 
 Metrics/CollectionLiteralLength:
@@ -35,6 +35,9 @@ Metrics/MethodLength:
   Max: 20
   Exclude:
     - "**/app/views/**/*.rb"
+    - "**/app/controllers/**/*.rb"
+    - "**/app/views/**/*.rb"
+    - "**/spec/**/*.rb"
 
 Metrics/ModuleLength:
   CountAsOne: ["array", "hash"]

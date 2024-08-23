@@ -52,6 +52,9 @@ Style/Documentation:
 Style/DocumentDynamicEvalDefinition:
   Enabled: true
 
+Style/EmptyMethod:
+  Enabled: false
+
 Style/EmptyHeredoc:
   Enabled: true
 

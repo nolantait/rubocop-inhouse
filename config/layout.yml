@@ -49,7 +49,6 @@ Layout/EmptyLinesAroundClassBody:
 
 Layout/EmptyLinesAroundMethodBody:
   Enabled: true
-  EnforcedStyle: no_empty_lines
 
 Layout/EmptyLinesAroundModuleBody:
   Enabled: true
