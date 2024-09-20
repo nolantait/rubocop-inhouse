@@ -1,13 +1,29 @@
 Layout/ArgumentAlignment:
   Enabled: true
+  EnforcedStyle: with_fixed_indentation
 
 Layout/ArrayAlignment:
   Enabled: true
+  EnforcedStyle: with_fixed_indentation
+
+Layout/AssignmentIndentation:
+  Enabled: true
+
+Layout/BeginEndAlignment:
+  Enabled: true
+  EnforcedStyleAlignWith: start_of_line
 
 Layout/BlockAlignment:
   EnforcedStyleAlignWith: start_of_block
   Exclude:
     - "**/*.erb"
+
+Layout/BlockEndNewline:
+  Enabled: true
+
+Layout/CaseIndentation:
+  Enabled: true
+  EnforcedStyle: end
 
 Layout/ClassStructure:
   ExpectedOrder:
@@ -26,15 +42,34 @@ Layout/ClassStructure:
     - private_delegate
     - private_methods
 
-Layout/CaseIndentation:
+Layout/ClosingHeredocIndentation:
   Enabled: true
-  EnforcedStyle: end
+
+Layout/ClosingParenthesisIndentation:
+  Enabled: true
+
+Layout/ConditionPosition:
+  Enabled: true
 
 Layout/CommentIndentation:
   Enabled: true
+  AllowForAlignment: true
+
+Layout/DefEndAlignment:
+  Enabled: true
+  EnforcedStyleAlignWith: start_of_line
+
+Layout/DotPosition:
+  Enabled: true
+  EnforcedStyle: leading
 
 Layout/ElseAlignment:
   Enabled: true
+
+Layout/EmptyComment:
+  Enabled: true
+  AllowBorderComment: true
+  AllowMarginComment: true
 
 Layout/EmptyLineAfterMagicComment:
   Enabled: true
@@ -54,12 +89,46 @@ Layout/EmptyLinesAroundModuleBody:
   Enabled: true
   EnforcedStyle: no_empty_lines
 
+Layout/EmptyLinesAroundAccessModifier:
+  Enabled: true
+  EnforcedStyle: around
+
+Layout/EmptyLinesAroundAttributeAccessor:
+  Enabled: true
+  AllowAliasSyntax: true
+  AllowedMethods:
+    - alias_method
+    - public
+    - protected
+    - private
+
+Layout/EmptyLinesAroundBeginBody:
+  Enabled: true
+
+Layout/EmptyLineBetweenDefs:
+  Enabled: true
+  EmptyLineBetweenMethodDefs: true
+  EmptyLineBetweenClassDefs: true
+  EmptyLineBetweenModuleDefs: true
+  AllowAdjacentOneLineDefs: true
+  NumberOfEmptyLines: 1
+
 # Align `end` with the matching keyword or starting expression except for
 # assignments, where it should be aligned with the LHS.
 Layout/EndAlignment:
   Enabled: true
   EnforcedStyleAlignWith: variable
   AutoCorrect: true
+
+Layout/EndOfLine:
+  Enabled: true
+  EnforcedStyle: native
+
+Layout/ExtraSpacing:
+  Enabled: true
+  AllowForAlignment: true
+  AllowBeforeTrailingComments: false
+  ForceEqualSignAlignment: false
 
 Layout/FirstArgumentIndentation:
   EnforcedStyle: consistent
@@ -69,12 +138,14 @@ Layout/FirstArrayElementIndentation:
 
 Layout/FirstArrayElementLineBreak:
   Enabled: true
+  AllowMultilineFinalElement: false
 
 Layout/FirstHashElementIndentation:
   EnforcedStyle: consistent
 
 Layout/FirstHashElementLineBreak:
   Enabled: true
+  AllowMultilineFinalElement: false
 
 Layout/FirstMethodArgumentLineBreak:
   Enabled: true
@@ -82,18 +153,22 @@ Layout/FirstMethodArgumentLineBreak:
 Layout/FirstMethodParameterLineBreak:
   Enabled: true
 
+Layout/HashAlignment:
+  Enabled: true
+  EnforcedHashRocketStyle: key
+  EnforcedColonStyle: key
+  EnforcedLastArgumentHashStyle: always_inspect
+
 Layout/IndentationConsistency:
   Enabled: true
 
 # Detect hard tabs, no hard tabs.
 Layout/IndentationStyle:
   Enabled: true
+  EnforcedStyle: spaces
 
-# Two spaces, no tabs (for indentation).
-#
-# Doesn't behave properly with private-only concerns, so it's disabled.
 Layout/IndentationWidth:
-  Enabled: false
+  Enabled: true
   Exclude:
     - "**/*.erb"
 
@@ -155,6 +230,7 @@ Layout/MultilineMethodParameterLineBreaks:
   Enabled: true
 
 Layout/ParameterAlignment:
+  Enabled: true
   EnforcedStyle: with_fixed_indentation
 
 # Use my_method(my_arg) not my_method( my_arg ) or my_method my_arg.
