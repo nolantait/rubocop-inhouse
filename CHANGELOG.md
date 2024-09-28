@@ -1,5 +1,10 @@
 ## [Unreleased]
 
+## [0.2.1] - 2024-09-27
+
+- Fixes some indentation rules from 0.2.0
+- Adds new `queue_migrate` folder to ignore
+
 ## [0.2.0] - 2024-08-22
 
 - Adds cops from `rails-omasake-rubocop` that were good to better match Rails
