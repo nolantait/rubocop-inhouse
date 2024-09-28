@@ -164,8 +164,6 @@ Style/NumberedParametersLimit:
 
 Style/NumericLiterals:
   Enabled: true
-  Exclude:
-    - '**/db/migrate/*'
 
 Style/PercentLiteralDelimiters:
   Enabled: true

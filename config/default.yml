@@ -22,6 +22,7 @@ AllCops:
     - "data/**/*"
     - "**/bin/*"
     - "**/db/migrate/*.rb"
+    - "**/db/queue_migrate/*.rb"
     - "**/db/schema.rb"
     - "**/node_modules/**/*"
 
