@@ -39,7 +39,7 @@ Gemspec/RequireMFA:
 # ====  NAMING  ====
 Naming/BlockForwarding:
   Enabled: true
-  EnforcedStyle: explicit
+  EnforcedStyle: anonymous
 
 # ====  SECURITY  ====
 Security/CompoundHash:
