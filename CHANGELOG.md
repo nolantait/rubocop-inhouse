@@ -1,5 +1,11 @@
 ## [Unreleased]
 
+## [0.2.2] - 2024-12-21
+
+- Adds `Style/FrozenStringLiteralComment` as a safe autocorrect so formatting
+  works through `ruby-lsp` by default. Currently too hard to change the command
+  the lsp uses to run.
+
 ## [0.2.1] - 2024-09-27
 
 - Fixes some indentation rules from 0.2.0
