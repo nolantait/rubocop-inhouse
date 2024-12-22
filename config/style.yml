@@ -76,7 +76,6 @@ Style/FileWrite:
 
 Style/FrozenStringLiteralComment:
   Enabled: true
-  Safe: true
   SafeAutoCorrect: true
 
 Style/FetchEnvVar:
