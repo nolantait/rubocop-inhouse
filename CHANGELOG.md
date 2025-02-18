@@ -1,5 +1,9 @@
 ## [Unreleased]
 
+## [0.2.3] - 2025-02-18
+
+- Migrates to new rubocop plugin system
+
 ## [0.2.2] - 2024-12-21
 
 - Adds `Style/FrozenStringLiteralComment` as a safe autocorrect so formatting

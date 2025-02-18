@@ -1,15 +1,15 @@
 PATH
   remote: .
   specs:
-    rubocop-inhouse (0.2.2)
-      rubocop (>= 1.5)
-      rubocop-capybara (>= 2.1)
-      rubocop-factory_bot (>= 2.2)
-      rubocop-performance (>= 1.1)
+    rubocop-inhouse (0.2.3)
+      rubocop (>= 1.72)
+      rubocop-capybara (>= 2.21)
+      rubocop-factory_bot (>= 2.26)
+      rubocop-performance (>= 1.24)
       rubocop-rails (>= 2.2)
-      rubocop-rake (>= 0.6)
-      rubocop-rspec (>= 2.2)
-      rubocop-rspec_rails (>= 2.2)
+      rubocop-rake (>= 0.7)
+      rubocop-rspec (>= 3.5)
+      rubocop-rspec_rails (>= 2.30)
 
 GEM
   remote: https://rubygems.org/
