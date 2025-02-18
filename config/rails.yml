@@ -1,9 +1,10 @@
 require:
-  - rubocop-inhouse
-  - rubocop-rails
   - rubocop-capybara
   - rubocop-factory_bot
   - rubocop-rspec_rails
+
+plugins:
+  - rubocop-rails
 
 inherit_from:
   - ./capybara.yml

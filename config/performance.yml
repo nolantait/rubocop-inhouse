@@ -1,8 +1,3 @@
-Performance:
-  Exclude:
-    - "spec/**/*"
-    - "test/**/*"
-
 Performance/AncestorsInclude:
   Enabled: true
 
