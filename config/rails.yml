@@ -126,7 +126,7 @@ Rails/OrderById:
 
 Rails/Output:
   Exclude:
-    - "app/views/**/*.rb"
+    - "**/app/views/**/*.rb"
 
 Rails/Pluck:
   Enabled: true
