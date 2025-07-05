@@ -47,6 +47,9 @@ Lint/EmptyInPattern:
 Lint/IncompatibleIoSelectWithFiberScheduler:
   Enabled: true
 
+Lint/ItWithoutArgumentsInBlock:
+  Enabled: false
+
 Lint/LambdaWithoutLiteralBlock:
   Enabled: true
 
