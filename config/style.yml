@@ -259,7 +259,7 @@ Style/SingleLineDoEndBlock:
   Enabled: true
 
 Style/StaticClass:
-  Enabled: true
+  Enabled: false
 
 Style/StringChars:
   Enabled: true
