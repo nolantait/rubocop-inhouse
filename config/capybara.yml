@@ -1,4 +1,4 @@
-Capybara/RSpec/ClickLinkOrButtonStyle:
+Capybara/ClickLinkOrButtonStyle:
   Enabled: true
   EnforcedStyle: strict
 
@@ -11,10 +11,10 @@ Capybara/RSpec/MatchStyle:
 Capybara/RSpec/NegationMatcher:
   Enabled: true
 
-Capybara/RSpec/SpecificActions:
+Capybara/SpecificActions:
   Enabled: true
 
-Capybara/RSpec/SpecificFinders:
+Capybara/SpecificFinders:
   Enabled: true
 
 Capybara/RSpec/SpecificMatcher:
