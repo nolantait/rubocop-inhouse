@@ -1,26 +1,26 @@
-Capybara/ClickLinkOrButtonStyle:
+Capybara/RSpec/ClickLinkOrButtonStyle:
   Enabled: true
   EnforcedStyle: strict
 
-Capybara/CurrentPathExpectation:
+Capybara/RSpec/CurrentPathExpectation:
   Enabled: true
 
-Capybara/MatchStyle:
+Capybara/RSpec/MatchStyle:
   Enabled: true
 
-Capybara/NegationMatcher:
+Capybara/RSpec/NegationMatcher:
   Enabled: true
 
-Capybara/SpecificActions:
+Capybara/RSpec/SpecificActions:
   Enabled: true
 
-Capybara/SpecificFinders:
+Capybara/RSpec/SpecificFinders:
   Enabled: true
 
-Capybara/SpecificMatcher:
+Capybara/RSpec/SpecificMatcher:
   Enabled: true
 
-Capybara/VisibilityMatcher:
+Capybara/RSpec/VisibilityMatcher:
   Enabled: true
 
 Capybara/RSpec/HaveSelector:
