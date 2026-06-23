@@ -1,6 +1,5 @@
 Capybara/AmbiguousClick:
   Enabled: true
-  EnforcedStyle: strict
 
 Capybara/RSpec/CurrentPathExpectation:
   Enabled: true
