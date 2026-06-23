@@ -1,4 +1,4 @@
-Capybara/ClickLinkOrButtonStyle:
+Capybara/AmbiguousClick:
   Enabled: true
   EnforcedStyle: strict
 
