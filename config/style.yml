@@ -52,6 +52,13 @@ Style/Documentation:
 Style/DocumentDynamicEvalDefinition:
   Enabled: true
 
+Style/EmptyClassDefinition:
+  Enabled: true
+  AllowedParentClasses:
+    - StandardError
+    - RuntimeError
+    - ArgumentError
+
 Style/EmptyMethod:
   Enabled: false
 
