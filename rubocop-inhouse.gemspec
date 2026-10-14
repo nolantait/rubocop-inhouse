@@ -25,7 +25,7 @@ Gem::Specification.new do |spec|
     "README.md",
     "LICENSE.txt",
     "config/*.yml",
-    "lib/**/*.rb",
+    "lib/**/*.rb"
   ]
 
   # Uncomment to register a new dependency of your gem
