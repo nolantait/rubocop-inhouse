@@ -1,5 +1,7 @@
 # frozen_string_literal: true
 
+require "rubocop"
+require "rubocop/rspec/support"
 require "rubocop/inhouse"
 
 RSpec.configure do |config|

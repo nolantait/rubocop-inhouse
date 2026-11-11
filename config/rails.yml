@@ -222,6 +222,9 @@ Rails/WhereExists:
 Rails/WhereNot:
   Enabled: true
 
+Inhouse/Rails/DependentDeleteAll:
+  Enabled: true
+
 RSpecRails/AvoidSetupHook:
   Enabled: true
 

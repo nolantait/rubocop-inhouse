@@ -1,5 +1,14 @@
 ## [Unreleased]
 
+- Adds `Inhouse/DryInitializerParams` to prefer `option` over `param` when
+  multiple arguments have no natural ordering.
+- Adds `Inhouse/PositiveNaming` to discourage negatively named methods,
+  variables, arguments, and attributes.
+- Adds `Inhouse/Rails/DependentDeleteAll` to prefer `dependent: :delete_all`
+  unless associated records need callbacks.
+- Enables `RSpec/InstanceVariable` to disallow instance variables in specs.
+- Adds lint_roller plugin metadata so the gem can be loaded with `plugins`.
+
 ## [0.2.3] - 2025-02-18
 
 - Migrates to new rubocop plugin system

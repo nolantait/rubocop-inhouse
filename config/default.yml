@@ -41,6 +41,32 @@ Naming/BlockForwarding:
   Enabled: true
   EnforcedStyle: anonymous
 
+# ====  INHOUSE  ====
+Inhouse/DryInitializerParams:
+  Description: "Prefer `option` over `param` when multiple arguments have no natural ordering."
+  Enabled: true
+  SafeAutoCorrect: false
+  VersionAdded: "0.3.0"
+
+Inhouse/PositiveNaming:
+  Description: "Use positive names instead of names that describe the absence of a state."
+  Enabled: true
+  ForbiddenPrefixes:
+    - not_
+    - no_
+    - non_
+    - is_not_
+    - has_no_
+    - without_
+  VersionAdded: "0.3.0"
+
+# Rails-specific cop. Enabled by config/rails.yml.
+Inhouse/Rails/DependentDeleteAll:
+  Description: "Use `dependent: :delete_all` unless the associated records need callbacks."
+  Enabled: false
+  SafeAutoCorrect: false
+  VersionAdded: "0.3.0"
+
 # ====  SECURITY  ====
 Security/CompoundHash:
   Enabled: true

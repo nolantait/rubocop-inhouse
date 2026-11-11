@@ -1,6 +1,14 @@
 # frozen_string_literal: true
 
+require "rubocop"
+require "pathname"
+
 require_relative "inhouse/version"
+require_relative "inhouse/plugin"
+
+require_relative "cop/inhouse/dry_initializer_params"
+require_relative "cop/inhouse/positive_naming"
+require_relative "cop/inhouse/rails/dependent_delete_all"
 
 module Rubocop
   module Inhouse

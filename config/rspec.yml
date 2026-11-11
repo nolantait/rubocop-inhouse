@@ -111,7 +111,8 @@ RSpec/ExpectInHook:
     - '**/spec/factories/**/*.rb'
 
 RSpec/InstanceVariable:
-  Enabled: false
+  Enabled: true
+  AssignmentOnly: false
   Exclude:
     - '**/spec/factories/**/*.rb'
 

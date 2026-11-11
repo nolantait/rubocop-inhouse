@@ -15,22 +15,25 @@ Add `rubocop-inhouse` to your Gemfile, along with its dependencies:
   gem "rubocop-inhouse", require: false
   ```
 
-Inherit all of the stylistic rules and cops through an inheritance declaration
-in your `.rubocop.yml`:
+Register the plugin in your `.rubocop.yml`. The generic Ruby rules are loaded
+automatically; Rails projects should also inherit `config/rails.yml`:
 
   ```yaml
-  require:
+  plugins:
     - rubocop-inhouse
+
   inherit_gem:
     rubocop-inhouse:
-    - config/default.yml # generic Ruby rules and cops
-    - config/rails.yml # Rails-specific rules and cops
+      - config/rails.yml # Rails-specific rules and cops
 
   AllCops:
     NewCops: enable
 
   # The rest of your overrides here
   ```
+
+On older RuboCop versions you can load the gem with `require:
+rubocop-inhouse` instead of `plugins`.
 
 For more granular control over which of RuboCop's rules are enabled for your
 project, both from this gem and your own configs, consider using the
@@ -39,3 +42,26 @@ project, both from this gem and your own configs, consider using the
 explicitly enable the ones you want by setting `Enabled: true`. See [the RuboCop
 docs](https://docs.rubocop.org/rubocop/configuration.html#enabled) for more
 information.
+
+## InHouse rules and cops
+
+| Rule | Cop |
+| --- | --- |
+| Do not use instance variables inside RSpec tests | `RSpec/InstanceVariable` |
+| Prefer keyword arguments when multiple arguments have no natural ordering | `Inhouse/DryInitializerParams` |
+| Use positive names | `Inhouse/PositiveNaming` |
+| Use `dependent: :delete_all` when no callbacks are needed | `Inhouse/Rails/DependentDeleteAll` |
+
+`Inhouse/DryInitializerParams` reports classes using `dry-initializer` that
+declare more than one `param`. Its autocorrect changes `param` to `option` and
+is marked unsafe because it changes the call signature.
+
+`Inhouse/PositiveNaming` checks method names, variables, arguments, and
+attribute declarations against the configurable `ForbiddenPrefixes` list.
+
+`Inhouse/Rails/DependentDeleteAll` is enabled by `config/rails.yml`. Disable it
+for an association when the associated records need callbacks:
+
+  ```ruby
+  has_many :comments, dependent: :destroy # rubocop:disable Inhouse/Rails/DependentDeleteAll
+  ```
