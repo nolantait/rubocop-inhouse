@@ -8,6 +8,7 @@ require_relative "inhouse/plugin"
 
 require_relative "cop/inhouse/dry_initializer_params"
 require_relative "cop/inhouse/positive_naming"
+require_relative "cop/inhouse/rails/association_callbacks"
 require_relative "cop/inhouse/rails/dependent_delete_all"
 
 module Rubocop

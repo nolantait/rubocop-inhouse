@@ -6,7 +6,8 @@
   variables, arguments, and attributes.
 - Adds `Inhouse/Rails/DependentDeleteAll` to prefer `dependent: :delete_all`
   for `has_many` and `dependent: :delete` for `has_one` unless associated
-  records need callbacks.
+  records need callbacks. It inspects associated models and skips those with
+  destroy callbacks, commit callbacks, or dependent associations.
 - Enables `RSpec/InstanceVariable` to disallow instance variables in specs.
 - Adds lint_roller plugin metadata so the gem can be loaded with `plugins`.
 

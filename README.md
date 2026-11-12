@@ -60,10 +60,12 @@ is marked unsafe because it changes the call signature.
 attribute declarations against the configurable `ForbiddenPrefixes` list.
 
 `Inhouse/Rails/DependentDeleteAll` is enabled by `config/rails.yml`. It
-autocorrects `has_many` associations to `dependent: :delete_all` and `has_one`
-associations to `dependent: :delete`, since Rails does not accept `:delete_all`
-for `has_one`. Disable it for an association when the associated records need
-callbacks:
+inspects the associated model and skips the association when that model has
+destroy callbacks, commit callbacks, or its own dependent associations.
+Otherwise it autocorrects `has_many` associations to `dependent: :delete_all`
+and `has_one` associations to `dependent: :delete`, since Rails does not accept
+`:delete_all` for `has_one`. Disable it for an association when the callbacks
+cannot be detected statically:
 
   ```ruby
   has_many :comments, dependent: :destroy # rubocop:disable Inhouse/Rails/DependentDeleteAll
