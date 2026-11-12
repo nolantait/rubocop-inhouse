@@ -50,7 +50,7 @@ information.
 | Do not use instance variables inside RSpec tests | `RSpec/InstanceVariable` |
 | Prefer keyword arguments when multiple arguments have no natural ordering | `Inhouse/DryInitializerParams` |
 | Use positive names | `Inhouse/PositiveNaming` |
-| Use `dependent: :delete_all` when no callbacks are needed | `Inhouse/Rails/DependentDeleteAll` |
+| Use the callback-free `dependent` option when no callbacks are needed | `Inhouse/Rails/DependentDeleteAll` |
 
 `Inhouse/DryInitializerParams` reports classes using `dry-initializer` that
 declare more than one `param`. Its autocorrect changes `param` to `option` and
@@ -59,8 +59,11 @@ is marked unsafe because it changes the call signature.
 `Inhouse/PositiveNaming` checks method names, variables, arguments, and
 attribute declarations against the configurable `ForbiddenPrefixes` list.
 
-`Inhouse/Rails/DependentDeleteAll` is enabled by `config/rails.yml`. Disable it
-for an association when the associated records need callbacks:
+`Inhouse/Rails/DependentDeleteAll` is enabled by `config/rails.yml`. It
+autocorrects `has_many` associations to `dependent: :delete_all` and `has_one`
+associations to `dependent: :delete`, since Rails does not accept `:delete_all`
+for `has_one`. Disable it for an association when the associated records need
+callbacks:
 
   ```ruby
   has_many :comments, dependent: :destroy # rubocop:disable Inhouse/Rails/DependentDeleteAll

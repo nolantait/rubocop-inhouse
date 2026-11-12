@@ -6,17 +6,19 @@ module RuboCop
       module Rails
         # Checks for `dependent: :destroy` on associations.
         #
-        # `:delete_all` skips instantiating and destroying each record, which is
-        # faster. Use `:destroy` only when the associated records have
-        # callbacks that must run. Disable this cop on the association when
-        # those callbacks are needed.
+        # `:delete_all` and `:delete` skip instantiating and destroying each
+        # record, which is faster. Use `:destroy` only when the associated
+        # records have callbacks that must run. Disable this cop on the
+        # association when those callbacks are needed.
         #
         # @example
         #   # bad, when the associated records have no callbacks
         #   has_many :comments, dependent: :destroy
+        #   has_one :profile, dependent: :destroy
         #
         #   # good
         #   has_many :comments, dependent: :delete_all
+        #   has_one :profile, dependent: :delete
         #
         #   # good, when the associated records need callbacks
         #   has_many :comments, dependent: :destroy # callbacks are required
@@ -24,17 +26,24 @@ module RuboCop
         class DependentDeleteAll < Base
           extend AutoCorrector
 
-          MSG = "Use `dependent: :delete_all` unless the associated records " \
-                "need callbacks."
+          MSG = "Use `dependent: :%<replacement>s` unless the associated " \
+                "records need callbacks."
 
-          RESTRICT_ON_SEND = %i[has_many has_one has_and_belongs_to_many].freeze
+          REPLACEMENTS = {
+            has_many: :delete_all,
+            has_one: :delete
+          }.freeze
+
+          RESTRICT_ON_SEND = REPLACEMENTS.keys.freeze
 
           def on_send(node)
-            return if RESTRICT_ON_SEND.none?(node.method_name)
+            replacement = REPLACEMENTS[node.method_name]
+            return unless replacement
 
+            message = format(MSG, replacement: replacement)
             dependent_destroy_values(node).each do |value|
-              add_offense(value, message: MSG) do |corrector|
-                corrector.replace(value, ":delete_all")
+              add_offense(value, message: message) do |corrector|
+                corrector.replace(value, ":#{replacement}")
               end
             end
           end

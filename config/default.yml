@@ -62,7 +62,7 @@ Inhouse/PositiveNaming:
 
 # Rails-specific cop. Enabled by config/rails.yml.
 Inhouse/Rails/DependentDeleteAll:
-  Description: "Use `dependent: :delete_all` unless the associated records need callbacks."
+  Description: "Use the callback-free dependent option for an association unless its records need callbacks."
   Enabled: false
   SafeAutoCorrect: false
   VersionAdded: "0.3.0"

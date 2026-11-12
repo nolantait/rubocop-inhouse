@@ -11,7 +11,18 @@ RSpec.describe RuboCop::Cop::Inhouse::Rails::DependentDeleteAll, :config do
   it "registers an offense for has_one with dependent destroy" do
     expect_offense(<<~RUBY)
       has_one :profile, dependent: :destroy
-                                   ^^^^^^^^ Use `dependent: :delete_all` unless the associated records need callbacks.
+                                   ^^^^^^^^ Use `dependent: :delete` unless the associated records need callbacks.
+    RUBY
+  end
+
+  it "autocorrects has_one dependent destroy to delete" do
+    expect_offense(<<~RUBY)
+      has_one :profile, dependent: :destroy
+                                   ^^^^^^^^ Use `dependent: :delete` unless the associated records need callbacks.
+    RUBY
+
+    expect_correction(<<~RUBY)
+      has_one :profile, dependent: :delete
     RUBY
   end
 
@@ -41,6 +52,12 @@ RSpec.describe RuboCop::Cop::Inhouse::Rails::DependentDeleteAll, :config do
   it "does not register an offense for non-association calls" do
     expect_no_offenses(<<~RUBY)
       belongs_to :author, dependent: :destroy
+    RUBY
+  end
+
+  it "does not register an offense for has_and_belongs_to_many" do
+    expect_no_offenses(<<~RUBY)
+      has_and_belongs_to_many :categories, dependent: :destroy
     RUBY
   end
 end

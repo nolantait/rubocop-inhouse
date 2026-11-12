@@ -5,7 +5,8 @@
 - Adds `Inhouse/PositiveNaming` to discourage negatively named methods,
   variables, arguments, and attributes.
 - Adds `Inhouse/Rails/DependentDeleteAll` to prefer `dependent: :delete_all`
-  unless associated records need callbacks.
+  for `has_many` and `dependent: :delete` for `has_one` unless associated
+  records need callbacks.
 - Enables `RSpec/InstanceVariable` to disallow instance variables in specs.
 - Adds lint_roller plugin metadata so the gem can be loaded with `plugins`.
 
