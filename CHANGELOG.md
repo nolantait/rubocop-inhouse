@@ -4,6 +4,8 @@
   multiple arguments have no natural ordering.
 - Adds `Inhouse/PositiveNaming` to discourage negatively named methods,
   variables, arguments, and attributes.
+- Adds `Inhouse/Rails/ClassList` to prefer `%w[]` arrays over string
+  concatenation for `class` attribute values.
 - Adds `Inhouse/Rails/DependentDeleteAll` to prefer `dependent: :delete_all`
   for `has_many` and `dependent: :delete` for `has_one` unless associated
   records need callbacks. It inspects associated models and skips those with

@@ -50,6 +50,7 @@ information.
 | Do not use instance variables inside RSpec tests | `RSpec/InstanceVariable` |
 | Prefer keyword arguments when multiple arguments have no natural ordering | `Inhouse/DryInitializerParams` |
 | Use positive names | `Inhouse/PositiveNaming` |
+| Use `%w[]` arrays for class lists | `Inhouse/Rails/ClassList` |
 | Use the callback-free `dependent` option when no callbacks are needed | `Inhouse/Rails/DependentDeleteAll` |
 
 `Inhouse/DryInitializerParams` reports classes using `dry-initializer` that
@@ -58,6 +59,23 @@ is marked unsafe because it changes the call signature.
 
 `Inhouse/PositiveNaming` checks method names, variables, arguments, and
 attribute declarations against the configurable `ForbiddenPrefixes` list.
+
+`Inhouse/Rails/ClassList` is enabled by `config/rails.yml`. It flags `class`
+attribute values that concatenate string literals, such as a list split across
+lines with a trailing backslash, and autocorrects them to a `%w[]` array:
+
+  ```ruby
+  # bad
+  div(class: "rounded-md border " \
+             "shrink-0")
+
+  # good
+  div(class: %w[
+    rounded-md
+    border
+    shrink-0
+  ])
+  ```
 
 `Inhouse/Rails/DependentDeleteAll` is enabled by `config/rails.yml`. It
 inspects the associated model and skips the association when that model has

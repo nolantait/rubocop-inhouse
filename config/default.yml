@@ -61,6 +61,12 @@ Inhouse/PositiveNaming:
   VersionAdded: "0.3.0"
 
 # Rails-specific cop. Enabled by config/rails.yml.
+Inhouse/Rails/ClassList:
+  Description: "Use a `%w[]` array for class lists instead of concatenating string literals."
+  Enabled: false
+  SafeAutoCorrect: false
+  VersionAdded: "0.3.0"
+
 Inhouse/Rails/DependentDeleteAll:
   Description: "Use the callback-free dependent option for an association unless its records need callbacks."
   Enabled: false
