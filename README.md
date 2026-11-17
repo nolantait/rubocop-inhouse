@@ -55,9 +55,9 @@ information.
 
 `Inhouse/DryInitializerParams` reports classes using `dry-initializer` that
 declare more than one `param`. It follows superclass and included-module chains,
-so subclasses of a `dry-initializer` base class are checked too. Its autocorrect
-changes `param` to `option` and is marked unsafe because it changes the call
-signature.
+including base classes provided by gems, so subclasses of a `dry-initializer`
+base class are checked too. Its autocorrect changes `param` to `option` and is
+marked unsafe because it changes the call signature.
 
 `Inhouse/PositiveNaming` checks method names, variables, arguments, and
 attribute declarations against the configurable `ForbiddenPrefixes` list.

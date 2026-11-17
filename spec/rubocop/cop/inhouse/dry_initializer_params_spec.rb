@@ -1,5 +1,8 @@
 # frozen_string_literal: true
 
+require "fileutils"
+require "tmpdir"
+
 RSpec.describe RuboCop::Cop::Inhouse::DryInitializerParams, :config do
   it "registers an offense for multiple params" do
     expect_offense(<<~RUBY)
@@ -143,6 +146,51 @@ RSpec.describe RuboCop::Cop::Inhouse::DryInitializerParams, :config do
         end
       end
     RUBY
+  end
+
+  it "registers an offense when the superclass uses a dot for the namespace" do
+    expect_offense(<<~RUBY)
+      module Transport
+        class Base
+          extend Dry::Initializer
+        end
+      end
+
+      class Move < Transport.Base
+        param :source
+        ^^^^^ Prefer `option` over `param` when multiple arguments have no natural ordering.
+        param :destination
+        ^^^^^ Prefer `option` over `param` when multiple arguments have no natural ordering.
+      end
+    RUBY
+  end
+
+  it "loads base classes from gems on the load path" do
+    Dir.mktmpdir do |directory|
+      FileUtils.mkdir_p(File.join(directory, "inhouse_spec"))
+      File.write(
+        File.join(directory, "inhouse_spec", "dry_initializer_base.rb"),
+        <<~RUBY
+          module InhouseSpec
+            class DryInitializerBase
+              extend Dry::Initializer
+            end
+          end
+        RUBY
+      )
+      $LOAD_PATH.unshift(directory)
+
+      expect_offense(<<~RUBY)
+        class Move < InhouseSpec::DryInitializerBase
+          param :source
+          ^^^^^ Prefer `option` over `param` when multiple arguments have no natural ordering.
+          param :destination
+          ^^^^^ Prefer `option` over `param` when multiple arguments have no natural ordering.
+        end
+      RUBY
+    ensure
+      $LOAD_PATH.delete(directory)
+    end
   end
 
   it "does not register an offense when inheriting from a non-dry-initializer class" do

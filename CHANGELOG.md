@@ -2,7 +2,8 @@
 
 - Adds `Inhouse/DryInitializerParams` to prefer `option` over `param` when
   multiple arguments have no natural ordering. It also checks classes that
-  inherit from a class using `dry-initializer`.
+  inherit from a class using `dry-initializer`, including base classes provided
+  by gems.
 - Adds `Inhouse/PositiveNaming` to discourage negatively named methods,
   variables, arguments, and attributes.
 - Adds `Inhouse/Rails/ClassList` to prefer `%w[]` arrays over string

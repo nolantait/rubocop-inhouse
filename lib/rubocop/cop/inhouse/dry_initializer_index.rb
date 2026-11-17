@@ -2,6 +2,8 @@
 
 require "pathname"
 
+require "active_support/core_ext/string/inflections"
+
 module RuboCop
   module Cop
     module Inhouse
@@ -132,7 +134,7 @@ module RuboCop
             next [] unless send_node.method?(:include)
 
             send_node.arguments.filter_map do |argument|
-              argument.source if argument.const_type?
+              constant_path(argument)
             end
           end
         end
@@ -140,8 +142,24 @@ module RuboCop
         def superclass_name(node)
           return nil unless node.class_type?
 
-          superclass = node.children[1]
-          superclass.source if superclass&.const_type?
+          constant_path(node.children[1])
+        end
+
+        def constant_path(node)
+          return nil unless node
+
+          case node.type
+          when :const
+            node.source.delete_prefix("::")
+          when :send
+            receiver = node.receiver
+            method_name = node.method_name.to_s
+            return nil unless receiver && node.arguments.empty?
+            return nil unless method_name.match?(/\A[A-Z]/)
+
+            parent = constant_path(receiver)
+            "#{parent}::#{method_name}" if parent
+          end
         end
 
         def own_sends(node)
@@ -192,13 +210,47 @@ module RuboCop
 
           context_parts.length.downto(0) do |index|
             candidate = (context_parts[0...index] + [source]).join("::")
-            return candidate if @direct.key?(candidate)
+            return candidate if known_class?(candidate)
           end
 
           suffix_matches = @direct.keys.select do |key|
             key == source || key.end_with?("::#{source}")
           end
           suffix_matches.first if suffix_matches.one?
+        end
+
+        def known_class?(name)
+          return true if @direct.key?(name)
+
+          if name.include?("::")
+            index_external_constant(name)
+            return @direct.key?(name)
+          end
+
+          false
+        end
+
+        def index_external_constant(name)
+          @external_paths ||= {}
+          path = external_source_path(name)
+          return if path.nil? || @external_paths[path]
+
+          @external_paths[path] = true
+          ast = parse(File.read(path), path)
+          index_ast(ast) if ast
+        rescue StandardError
+          nil
+        end
+
+        def external_source_path(name)
+          relative_path = "#{name.underscore}.rb"
+
+          $LOAD_PATH.each do |directory|
+            path = File.join(directory, relative_path)
+            return path if File.file?(path)
+          end
+
+          nil
         end
       end
     end
