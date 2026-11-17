@@ -80,6 +80,83 @@ RSpec.describe RuboCop::Cop::Inhouse::DryInitializerParams, :config do
     RUBY
   end
 
+  it "registers an offense when inheriting from a dry-initializer class" do
+    expect_offense(<<~RUBY)
+      class Base
+        extend Dry::Initializer
+      end
+
+      class Move < Base
+        param :source
+        ^^^^^ Prefer `option` over `param` when multiple arguments have no natural ordering.
+        param :destination
+        ^^^^^ Prefer `option` over `param` when multiple arguments have no natural ordering.
+      end
+    RUBY
+  end
+
+  it "registers an offense when inheriting from a class including Dry::Initializer" do
+    expect_offense(<<~RUBY)
+      class Base
+        include Dry::Initializer
+      end
+
+      class Move < Base
+        param :source
+        ^^^^^ Prefer `option` over `param` when multiple arguments have no natural ordering.
+        param :destination
+        ^^^^^ Prefer `option` over `param` when multiple arguments have no natural ordering.
+      end
+    RUBY
+  end
+
+  it "registers an offense through multiple levels of inheritance" do
+    expect_offense(<<~RUBY)
+      class Base
+        extend Dry::Initializer
+      end
+
+      class Middle < Base
+      end
+
+      class Move < Middle
+        param :source
+        ^^^^^ Prefer `option` over `param` when multiple arguments have no natural ordering.
+        param :destination
+        ^^^^^ Prefer `option` over `param` when multiple arguments have no natural ordering.
+      end
+    RUBY
+  end
+
+  it "registers an offense for namespaced subclasses" do
+    expect_offense(<<~RUBY)
+      module Transport
+        class Base
+          extend Dry::Initializer
+        end
+
+        class Move < Base
+          param :source
+          ^^^^^ Prefer `option` over `param` when multiple arguments have no natural ordering.
+          param :destination
+          ^^^^^ Prefer `option` over `param` when multiple arguments have no natural ordering.
+        end
+      end
+    RUBY
+  end
+
+  it "does not register an offense when inheriting from a non-dry-initializer class" do
+    expect_no_offenses(<<~RUBY)
+      class Base
+      end
+
+      class Move < Base
+        param :source
+        param :destination
+      end
+    RUBY
+  end
+
   it "does not count params from a nested class" do
     expect_no_offenses(<<~RUBY)
       class Move

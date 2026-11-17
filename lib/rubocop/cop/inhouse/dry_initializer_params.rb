@@ -1,5 +1,9 @@
 # frozen_string_literal: true
 
+require "pathname"
+
+require_relative "dry_initializer_index"
+
 module RuboCop
   module Cop
     module Inhouse
@@ -36,8 +40,6 @@ module RuboCop
         MSG = "Prefer `option` over `param` when multiple arguments have no " \
               "natural ordering."
 
-        DRY_INITIALIZER_MIXINS = %i[include extend].freeze
-
         def on_send(node)
           return unless node.method?(:param)
 
@@ -58,13 +60,34 @@ module RuboCop
         end
 
         def dry_initializer?(namespace)
-          own_sends(namespace).any? do |send_node|
-            next false if DRY_INITIALIZER_MIXINS.none?(send_node.method_name)
+          dry_initializer_index.dry_initializer?(
+            dry_initializer_index.name_for(namespace)
+          )
+        end
 
-            send_node.arguments.any? do |argument|
-              argument.source.start_with?("Dry::Initializer")
-            end
+        def dry_initializer_index
+          @dry_initializer_index ||= DryInitializerIndex.new(
+            root: project_root,
+            ruby_version: target_ruby_version.to_f,
+            extra_asts: [processed_source.ast].compact
+          )
+        end
+
+        def project_root
+          @project_root ||= find_project_root
+        end
+
+        def find_project_root
+          path = processed_source.file_path
+          directory = File.directory?(path) ? path : File.dirname(path)
+          start = Pathname.new(File.expand_path(directory))
+
+          start.ascend do |candidate|
+            return candidate.to_s if candidate.join("Gemfile").exist?
+            return candidate.to_s if candidate.join(".git").exist?
           end
+
+          Dir.pwd
         end
 
         def own_params(namespace)
